@@ -1149,7 +1149,7 @@ void SetupMenu()
 	char* arr[512] = { "ERROR","ERROR","ERROR","ERROR","ERROR","ERROR","ERROR","ERROR","ERROR","ERROR","ERROR", };
 
 	//Tabs
-	AddNewTab("", Tab_LegitBot, "e");
+	AddNewTab("LEGITBOT", Tab_LegitBot, "E");
 	AddNewTab( "RAGEBOT", Tab_Ragebot, "s" );
 	AddNewTab( "VISUALS", Tab_Visuals, "t" );
 	AddNewTab( "MISC", Tab_Misc, "u" );
