@@ -6,7 +6,8 @@
 //Skeltal is the cutest
 enum MenuTabs
 {
-	Tab_Ragebot = 0,
+	Tab_LegitBot = 0,
+	Tab_Ragebot,
 	Tab_Visuals,
 	Tab_Misc,
 	Tab_Config,
@@ -18,6 +19,35 @@ enum Config
 	Config_save,
 	Config_load,
 	Config_type,
+};
+
+enum LegitBotTab
+{
+	Legitbot_enable,
+	Legitbot_Aimonkey,
+	Legitbot_fov,
+	Legitbot_fovtype,
+	Legitbot_smoothtype,
+	Legitbot_smoothX,
+	Legitbot_smoothY,
+	Legitbot_multihitbox,
+	Legitbot_hitbox,
+	Legitbot_rcs,
+	Legitbot_rcsforceX,
+	Legitbot_rcsforceY,
+	Legitbot_Aimbotkey,
+	Legitbot_Firedelay,
+
+	/*      TriggerBot      */
+	Triggerbot_Enable,
+	Triggerbot_FlashCheck,
+	Triggerbot_Delay,
+	Triggerbot_Hitbox,
+	Triggerbot_MultiBox,
+	Triggerbot_Key,
+	Triggerbot_Type,
+
+	MAXVALUELEGIT
 };
 
 enum RagebotTab

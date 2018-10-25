@@ -1636,7 +1636,7 @@ public:
 
 	bool IsReloading()
 	{
-		false; // GET THIS, ISNT A NETVAR?
+		return *(bool*)((uintptr_t)this + 0x3275);
 	}
 
 	CCSWeaponInfo* GetCSWpnData()

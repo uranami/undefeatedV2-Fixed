@@ -119,6 +119,49 @@ public:
 		return TIME_TO_TICKS(max(0.0f, flSimDiff));
 	}
 
+	static float GetFov(const Vector& viewAngle, const Vector& aimAngle)
+	{
+		Vector ang, aim;
+
+		g_Math.angleVectors(viewAngle, aim);
+		g_Math.angleVectors(aimAngle, ang);
+
+		return RAD2DEG(acos(aim.Dot(ang) / aim.LengthSqr()));
+	}
+
+	static Vector CalcAngle(Vector src, Vector dst)
+	{
+		Vector angles;
+		Vector delta = src - dst;
+		angles.x = (asinf(delta.z / delta.Length()) * 57.295779513082f);
+		angles.y = (atanf(delta.y / delta.x) * 57.295779513082f);
+		angles.z = 0.0f;
+		if (delta.x >= 0.0) { angles.y += 180.0f; }
+
+		return angles;
+	}
+	static bool isVisible(CBaseEntity* lul, int bone)
+	{
+		Ray_t ray;
+		trace_t tr;
+
+		Vector e_vecHead = lul->GetBonePos(bone);
+		Vector p_vecHead = Hacks.LocalPlayer->GetEyePosition();
+
+		ray.Init(Hacks.LocalPlayer->GetEyePosition(), lul->GetBonePos(bone));
+
+		CTraceFilter filter;
+		filter.pSkip = Hacks.LocalPlayer;
+
+		Interfaces.pTrace->TraceRay(ray, (0x1 | 0x4000 | 0x2000000 | 0x2 | 0x4000000 | 0x40000000), &filter, &tr);
+
+		if (tr.m_pEnt == lul)
+		{
+			return true;
+		}
+
+		return false;
+	}
 	static bool Shooting()
 	{
 		if (Hacks.LocalWeapon->IsKnife())

@@ -165,6 +165,7 @@ void New_CreateMove(CInput* thisptr, void* _EAX, int sequence_number, float inpu
 
 				CreateMoveETC::LocalPrediction();
 				Settings.weaponconfigs();
+				Legitbot.Run();
 
 				if (Settings.GetSetting(Tab_Misc, Misc_KnifeBot)) {
 

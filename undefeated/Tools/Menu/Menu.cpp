@@ -1149,11 +1149,33 @@ void SetupMenu()
 	char* arr[512] = { "ERROR","ERROR","ERROR","ERROR","ERROR","ERROR","ERROR","ERROR","ERROR","ERROR","ERROR", };
 
 	//Tabs
+	AddNewTab("", Tab_LegitBot, "e");
 	AddNewTab( "RAGEBOT", Tab_Ragebot, "s" );
 	AddNewTab( "VISUALS", Tab_Visuals, "t" );
 	AddNewTab( "MISC", Tab_Misc, "u" );
 	AddNewTab( "SETTINGS", Tab_Config, "v" );
 
+
+	AddNewMenuBox("Aimbot", 195, 20, 235, 385, Tab_LegitBot);
+	{
+
+		std::vector< char* > Hitbox = { "Head", "Head", "Chest", "Stomach" };
+		std::vector< char* > FovType = { "Static", "Static" };
+
+		AddNewButton(Tab_LegitBot, Legitbot_enable, false, 215, 40, "Aimbot Enabled");
+		AddNewButton(Tab_LegitBot, Legitbot_Aimonkey, false, 215, 70, "Aimbot On Key");
+		AddNewKeyButton(215, 85, Tab_LegitBot, Legitbot_Aimbotkey, "");
+		AddNewButton(Tab_LegitBot, Legitbot_multihitbox, false, 215, 115, "Nearest");
+		AddNewDropbox(215, 145, Tab_LegitBot, Legitbot_hitbox, "Hitbox", 4, Hitbox);
+		AddNewSlider(215, 175, 0, 10, 0, "Fov", Tab_LegitBot, Legitbot_fov);
+		AddNewSlider(215, 205, 0, 100, 0, "Speed X", Tab_LegitBot, Legitbot_smoothY);
+		AddNewSlider(215, 235, 0, 100, 0, "Speed Y", Tab_LegitBot, Legitbot_smoothX);
+		AddNewSlider(215, 275, 0, 2, 0, "Rcs force X", Tab_LegitBot, Legitbot_rcsforceX);
+		AddNewSlider(215, 305, 0, 2, 0, "Rcs force Y", Tab_LegitBot, Legitbot_rcsforceY);
+		AddNewSlider(215, 335, 0, 150, 0, "Fire delay", Tab_LegitBot, Legitbot_Firedelay);
+
+	
+	}
 	/* Ragebot */
 
 	AddNewMenuBox( "Aimbot", 195, 20, 235, 455, Tab_Ragebot );
