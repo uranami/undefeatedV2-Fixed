@@ -1383,15 +1383,8 @@ void DrawMenu()
 
 	if (firsttime)
 	{
-		if (Build == 13657)
-		{
-			SetupMenu();
-			firsttime = false;
-		}
-		else
-		{
-			Unhook();
-		}
+	SetupMenu();
+       firsttime = false;
 	}
 
 	if (!(GetAsyncKeyState(VK_LBUTTON) & 0x8000))
